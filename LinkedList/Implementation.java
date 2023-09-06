@@ -8,7 +8,6 @@ public class Implementation {
             this.data = data;
         }
     }
-
     public static class LinkedList {
         Node head = null;
         Node tail = null;
@@ -50,6 +49,12 @@ public class Implementation {
             if(ind == size()){
                 insertAtEnd(val);
                 return;
+            } else if (ind == 0) {
+                insertAtHead(val);
+                return;
+            } else if (ind <0 || ind>size()) {
+                System.out.println("invalid index");
+                return;
             }
             Node t = new Node(val);
             Node temp =head;
@@ -59,6 +64,34 @@ public class Implementation {
             t.next = temp.next;
             temp.next = t;
         }
+        int get(int ind){
+            if (ind <0 || ind>=size()){
+                System.out.print("invalid index ");
+                return ind;
+            }
+            Node temp= head;
+            for (int i = 0; i < ind; i++) {
+                temp = temp.next;
+            }
+            return temp.data;
+        }
+        void delete(int ind){
+            if (ind <0 || ind>=size()){
+                System.out.println("invalid deletion");
+            } else if (ind==0) {
+                head = head.next;
+                return;
+            }
+            Node temp = head;
+            for (int i = 0; i < ind-1; i++) {
+                temp= temp.next;
+            }
+            if (ind == size()-1) {
+                tail = temp;
+                temp.next= temp.next.next;
+                return;
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -67,16 +100,25 @@ public class Implementation {
         ll.insertAtEnd(6);
         ll.insertAtEnd(9);
         ll.insertAtEnd(0);
+//        ll.display();
+//        System.out.println();
+//        System.out.println(ll.size());
+        ll.insertAtHead(8);
+        ll.insertAtHead(56);
+//        ll.display();
+//        System.out.println();
+        ll.insertAt(6,10);
+//        ll.display();
+//        System.out.println();
+//        System.out.println(ll.head.data +" "+ ll.tail.data);
+        ll.insertAt(0,8);
+//        ll.insertAt(9,85);
         ll.display();
         System.out.println();
         System.out.println(ll.size());
-        ll.insertAtHead(8);
-        ll.insertAtHead(56);
+//        System.out.println(ll.get(8));
+        ll.delete(0);
+        System.out.println(ll.tail.data);
         ll.display();
-        System.out.println();
-        ll.insertAt(6,10);
-        ll.display();
-        System.out.println();
-        System.out.println(ll.head.data +" "+ ll.tail.data);
     }
 }
