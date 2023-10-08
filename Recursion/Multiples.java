@@ -19,3 +19,4 @@ public class Multiples {
         System.out.println(k*n + " ");
     }
 }
+//Question find the sum of n natural sum
