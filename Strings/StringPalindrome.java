@@ -7,8 +7,17 @@ public class StringPalindrome {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s= sc.nextLine();
-        isPalindrome(s);
-//        isPlaind
+//        isPalindrome(s);
+        System.out.println(isPalindrome2(s,0,s.length()-1));
+    }
+
+    private static boolean isPalindrome2(String s, int i, int length) {
+        if(i>=length){
+            return true;
+        }
+        if (s.charAt(i)== s.charAt(length)){
+            return isPalindrome2(s,i+1, length-1);
+        }else return false;
     }
 
     private static void isPalindrome(String s) {
