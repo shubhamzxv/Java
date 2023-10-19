@@ -14,6 +14,8 @@ public class BubbleSort {
         average =n2
         worst =n2
 
+        spacae complexity = O(1)
+
         it is an stable alogorithm ( because it donot change the order of two same elements)
 
         it is an in-place algorithm
