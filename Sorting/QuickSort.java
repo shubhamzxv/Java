@@ -60,12 +60,12 @@ public class QuickSort {
         }
         return  pivotIndx;
     }
-    static void swap(int[] arr, int a , int b){
+    public static void swap(int[] arr, int a , int b){
         int temp= arr[a];
         arr[a] = arr[b];
         arr[b]= temp;
     }
-    static void display(int[] arr){
+    public static void display(int[] arr){
         for (int s: arr ) {
             System.out.print(s+" ");
         }

@@ -24,7 +24,7 @@ public class CountSort {
              }
          }
      }
-    static void CountSort(int[] arr){
+    static void countSort(int[] arr){
         int max = findMax(arr);
         int[] output= new int[arr.length];
         int[] count = new int[max+1];
@@ -51,7 +51,7 @@ public class CountSort {
         int[] arr = {7,6,5,4,2,3,100,20,356};
         display(arr);
         System.out.println("\nAfter Count Sort");
-        CountSort(arr);
+        countSort(arr);
         display(arr);
     }
 }
